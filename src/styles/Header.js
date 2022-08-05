@@ -9,13 +9,14 @@ export const HeaderContainer = styled.div`
 export const InnerWrap = styled.div`
   width: 1300px;
   display: flex;
-  padding: 20px;
+  padding: 10px;
   align-items: center;
   justify-content: space-between;
   margin: 0 auto;
 `;
 export const LeftInner = styled.div`
   display: flex;
+  align-items: center;
 `;
 export const Logo = styled.a`
   img {
@@ -24,14 +25,48 @@ export const Logo = styled.a`
 `;
 
 export const MainNav = styled.nav`
-  width: 250px;
   display: flex;
   justify-content: space-between;
   color: white;
   margin-left: 25px;
-  div:hover {
-    color: navy;
-    cursor: pointer;
+`;
+export const MenuUl = styled.ul`
+  display: flex;
+  list-style: none;
+`;
+export const MenuLi = styled.li`
+  &:hover {
+    background-color: yellow;
+    color: #000;
+    ul {
+      display: block;
+    }
+  }
+
+  h4 {
+    padding: 0 10px;
+    margin: 0;
+  }
+`;
+
+export const SubMenuUl = styled.ul`
+  display: none;
+  position: absolute;
+  background-color: #fff;
+  padding: 8px 55px 8px 15px;
+  list-style: none;
+  border-radius: 4px;
+  width: 200px;
+  margin: 0;
+  padding: 0;
+  li {
+    display: block;
+    padding: 8px 55px 8px 15px;
+    &:hover {
+      background-color: rgba(219, 219, 219, 1);
+      padding-right: 20px;
+      cursor: pointer;
+    }
   }
 `;
 
