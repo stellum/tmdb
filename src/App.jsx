@@ -5,6 +5,7 @@ import CurrentShows from "./pages/CurrentShows";
 import FutureReleases from "./pages/FutureReleases";
 import Ratings from "./pages/Ratings";
 import MovieCard from "./components/MovieCard";
+import Home from "./pages/Home";
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
         <Header />
         <MovieCard />
         <Routes>
+          <Route path="/" element={<Home />}></Route>
           <Route path="/popular" element={<Popular />}></Route>
           <Route path="/current-shows" element={<CurrentShows />}></Route>
           <Route path="/future-releases" element={<FutureReleases />}></Route>

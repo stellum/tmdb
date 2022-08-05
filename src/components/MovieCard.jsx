@@ -3,20 +3,28 @@ import { CardWrap, Movie, MovieImg, TextWrap } from "../styles/MovieCard";
 import movie from "../assets/movie.jpeg";
 import { CgMoreO } from "react-icons/cg";
 
-const MovieCard = () => {
+const MovieCard = ({ movie }) => {
+  console.log(movie);
   return (
-    <CardWrap>
-      <MovieImg>
-        <CgMoreO />
-      </MovieImg>
-      <Movie src={movie} alt="">
-        {/* <img src={movie} alt="" /> */}
-      </Movie>
-      <TextWrap>
-        <h1>메이의 새빨간 비밀</h1>
-        <p>3월 10, 2022</p>
-      </TextWrap>
-    </CardWrap>
+    <>
+      {movie && (
+        <CardWrap>
+          <MovieImg>
+            <CgMoreO />
+          </MovieImg>
+          <Movie
+            src={`https://image.tmdb.org/t/p/w300/${movie.poster_path}`}
+            alt={movie.title}
+          >
+            {/* <img src={movie} alt="" /> */}
+          </Movie>
+          <TextWrap>
+            <h1>{movie.title}</h1>
+            <p>{movie.release_date}</p>
+          </TextWrap>
+        </CardWrap>
+      )}
+    </>
   );
 };
 
