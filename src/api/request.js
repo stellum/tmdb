@@ -16,4 +16,16 @@ export const getMovie = async () => {
   }
 };
 
-getMovie();
+export const currentMovies = async () => {
+  try {
+    const response = await axios({
+      method: "GET",
+      url: `https://api.themoviedb.org/3/movie/now_playing?api_key=${API_KEY}&language=en-kr&page=1`,
+    });
+    if (response.status === 200) {
+      return response.data;
+    }
+  } catch (e) {
+    console.log(e);
+  }
+};

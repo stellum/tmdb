@@ -11,6 +11,7 @@ import {
   MenuLi,
   SubMenuUl,
   SubNav,
+  AddImg,
 } from "../styles/Header";
 import { GrAdd } from "react-icons/gr";
 import { GoSearch } from "react-icons/go";
@@ -27,17 +28,36 @@ const Header = () => {
           {/* main nav */}
           <MainNav>
             <MenuUl>
+              <div>
+                <MenuLi>
+                  <h4>영화</h4>
+                  <SubMenuUl>
+                    <li>
+                      <Link to="/popular">인기</Link>
+                    </li>
+                    <li>
+                      <Link to="/current-shows">현재 상영 중</Link>
+                    </li>
+                    <li>
+                      <Link to="/future-releases"> 개봉 예정</Link>
+                    </li>
+                    <li>
+                      <Link to="/ratings"> 높은 평점</Link>
+                    </li>
+                  </SubMenuUl>
+                </MenuLi>
+              </div>
               <MenuLi>
-                <h4>영화</h4>
+                <h4>TV 프로그램</h4>
                 <SubMenuUl>
                   <li>
                     <Link to="/popular">인기</Link>
                   </li>
                   <li>
-                    <Link to="/current-shows">현재 상영 중</Link>
+                    <Link to="/current-shows">오늘 방영</Link>
                   </li>
                   <li>
-                    <Link to="/future-releases"> 개봉 예정</Link>
+                    <Link to="/future-releases">TV 방영 중</Link>
                   </li>
                   <li>
                     <Link to="/ratings"> 높은 평점</Link>
@@ -45,30 +65,28 @@ const Header = () => {
                 </SubMenuUl>
               </MenuLi>
               <MenuLi>
-                <h4>TV 프로그램</h4>
-                <SubMenuUl>
-                  <li>인기</li>
-                  <li>현재 상영 중</li>
-                  <li>개봉 예정</li>
-                  <li>높은 평점</li>
-                </SubMenuUl>
-              </MenuLi>
-              <MenuLi>
                 <h4>인물</h4>
                 <SubMenuUl>
-                  <li>인기</li>
-                  <li>현재 상영 중</li>
-                  <li>개봉 예정</li>
-                  <li>높은 평점</li>
+                  <li>
+                    <Link to="/popular">인기 인물</Link>
+                  </li>
                 </SubMenuUl>
               </MenuLi>
               <MenuLi>
                 <h4>More</h4>
                 <SubMenuUl>
-                  <li>인기</li>
-                  <li>현재 상영 중</li>
-                  <li>개봉 예정</li>
-                  <li>높은 평점</li>
+                  <li>
+                    <Link to="/popular">토론 내역</Link>
+                  </li>
+                  <li>
+                    <Link to="/current-shows">기여 랭킹</Link>
+                  </li>
+                  <li>
+                    <Link to="/future-releases">지원</Link>
+                  </li>
+                  <li>
+                    <Link to="/ratings">API</Link>
+                  </li>
                 </SubMenuUl>
               </MenuLi>
             </MenuUl>
@@ -77,14 +95,16 @@ const Header = () => {
 
         {/* sub nav */}
         <SubNav>
-          <div>
-            <GrAdd />
-          </div>
+          <AddImg>
+            <img src={GrAdd} alt="" />
+          </AddImg>
           <div>
             <button>KO</button>
           </div>
           <div>로그인</div>
-          <div>회원가입</div>
+          <div>
+            <Link to="/register">회원가입</Link>
+          </div>
           <div>
             <GoSearch />
           </div>
