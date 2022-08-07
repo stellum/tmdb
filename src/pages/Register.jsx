@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import {
   Container,
   InnerContainer,
@@ -18,6 +18,9 @@ const Register = () => {
   const [errormsg, setErrorMsg] = useState("");
   const [pwCheckMsg, setPwCheckMsg] = useState("");
   const [pwBox, setPwBox] = useState(true);
+  const [emailMsg, setEmailMsg] = useState("");
+  // emailMsg = data 값 / setEmailMsg = state 를 업데이트 시켜줄 function
+  const [btnActive, setBtnActive] = useState(true);
 
   const handleId = (e) => {
     setId(e.target.value);
@@ -47,9 +50,28 @@ const Register = () => {
   };
 
   const handleEmail = (e) => {
+    var regEmail =
+      /^[0-9a-zA-Z]([-_\.]?[0-9a-zA-Z])*@[0-9a-zA-Z]([-_\.]?[0-9a-zA-Z])*\.[a-zA-Z]{2,3}$/;
+    if (regEmail.test(e.target.value) === true) {
+      setEmailMsg("입력된 값은 이메일입니다.");
+    } else {
+      setEmailMsg("입력된 값은 이메일이 아닙니다.");
+    }
     setEmail(e.target.value);
     console.log(e.target.value);
   };
+
+  const handleRegister = () => {
+    console.log("click");
+  };
+
+  useEffect(() => {
+    if (id && password && passwordCheck && email) {
+      console.log("통과!"); // 빈문자열은 false
+    } else {
+      console.log("실패");
+    }
+  }, [id, password, passwordCheck, email]);
 
   return (
     <div>
@@ -96,6 +118,7 @@ const Register = () => {
                 value={email}
                 onChange={(e) => handleEmail(e)}
               />
+              {emailMsg}
             </Fieldset>
 
             <Agreement>
@@ -103,7 +126,14 @@ const Register = () => {
               대한 정독 여부와 동의를 표시합니다.
             </Agreement>
             <BtnWrap>
-              <RegisterBtn>회원가입</RegisterBtn>
+              <RegisterBtn
+                className="active"
+                type="button"
+                onClick={handleRegister}
+                disabled={btnActive}
+              >
+                회원가입
+              </RegisterBtn>
               <CancelBtn>취소</CancelBtn>
             </BtnWrap>
           </InnerContainer>

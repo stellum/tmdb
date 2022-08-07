@@ -45,7 +45,7 @@ export const BtnWrap = styled.div`
 export const RegisterBtn = styled.button`
   display: block;
   width: 100px;
-  background-color: #01b4e4;
+  background-color: gray;
   color: white;
   border-radius: 7px;
   padding: 9px;
@@ -53,8 +53,12 @@ export const RegisterBtn = styled.button`
   font-weight: 500;
   border-style: none;
   cursor: pointer;
-  &:hover {
-    background-color: rgba(3, 37, 65, 1);
+
+  .active {
+    background-color: #01b4e4;
+    &:hover {
+      background-color: rgba(3, 37, 65, 1);
+    }
   }
 `;
 
