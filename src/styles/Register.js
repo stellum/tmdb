@@ -6,6 +6,7 @@ export const Container = styled.div`
   padding: 20px;
 `;
 
+export const InnerContainer = styled.div``;
 export const Header = styled.div`
   h3 {
     font-size: 26px;
@@ -27,7 +28,11 @@ export const Fieldset = styled.form`
     padding: 10px;
     margin: 5px 0 20px 0;
   }
+  .inputBox:focus {
+    outline-color: red;
+  }
 `;
+
 export const Agreement = styled.div`
   padding: 15px 0 30px 0;
   color: #2c3034;
