@@ -29,3 +29,36 @@ export const currentMovies = async () => {
     console.log(e);
   }
 };
+
+export const movieDetails = async (movieId) => {
+  // console.log("movieId", movieId);
+
+  try {
+    const response = await axios({
+      method: "GET",
+      url: `https://api.themoviedb.org/3/movie/${movieId}?api_key=${API_KEY}&language=en-kr&page=1`,
+    });
+    if (response.status === 200) {
+      console.log(response);
+      return response.data;
+    }
+  } catch (e) {
+    console.log(e);
+  }
+};
+
+export const tvDetails = async (tvId) => {
+  // console.log("tvId", tvId);
+  try {
+    const response = await axios({
+      method: "GET",
+      url: `https://api.themoviedb.org/3/tv/${tvId}?api_key=${API_KEY}&language=en-kr&page=1`,
+    });
+    if (response.status === 200) {
+      console.log(response);
+      return response.data;
+    }
+  } catch (e) {
+    console.log(e);
+  }
+};

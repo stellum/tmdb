@@ -11,7 +11,7 @@ import {
 } from "../styles/Register";
 
 const Register = () => {
-  const [id, setId] = useState("");
+  const [id, setId] = useState(""); // 빈문자열 = false  0 = false
   const [password, setPassword] = useState("");
   const [passwordCheck, setPasswordCheck] = useState("");
   const [email, setEmail] = useState("");
@@ -21,10 +21,11 @@ const Register = () => {
   const [emailMsg, setEmailMsg] = useState("");
   // emailMsg = data 값 / setEmailMsg = state 를 업데이트 시켜줄 function
   const [btnActive, setBtnActive] = useState(true);
+  const [emailCheck, setEmailCheck] = useState(false);
 
   const handleId = (e) => {
     setId(e.target.value);
-    console.log(e.target.value);
+    // console.log(e.target.value);
   };
 
   const handlePassword = (e) => {
@@ -34,7 +35,7 @@ const Register = () => {
       setErrorMsg("");
     }
     setPassword(e.target.value);
-    console.log(e.target.value);
+    // console.log(e.target.value);
   };
 
   const handlePasswordCheck = (e) => {
@@ -46,7 +47,7 @@ const Register = () => {
       setPwBox(true);
     }
     setPasswordCheck(e.target.value);
-    console.log(e.target.value);
+    // console.log(e.target.value);
   };
 
   const handleEmail = (e) => {
@@ -54,11 +55,13 @@ const Register = () => {
       /^[0-9a-zA-Z]([-_\.]?[0-9a-zA-Z])*@[0-9a-zA-Z]([-_\.]?[0-9a-zA-Z])*\.[a-zA-Z]{2,3}$/;
     if (regEmail.test(e.target.value) === true) {
       setEmailMsg("입력된 값은 이메일입니다.");
+      setEmailCheck(true);
     } else {
       setEmailMsg("입력된 값은 이메일이 아닙니다.");
+      setEmailCheck(false);
     }
     setEmail(e.target.value);
-    console.log(e.target.value);
+    // console.log(e.target.value);
   };
 
   const handleRegister = () => {
@@ -66,12 +69,14 @@ const Register = () => {
   };
 
   useEffect(() => {
-    if (id && password && passwordCheck && email) {
+    // && (=그리고) 연산자 하나라도 true가 아니면 통과가 안됩니다!
+    //  || (=또는) 조건 중 하나만 true여도 통과!
+    if (id && password && passwordCheck && email && !pwBox && emailCheck) {
       console.log("통과!"); // 빈문자열은 false
     } else {
       console.log("실패");
     }
-  }, [id, password, passwordCheck, email]);
+  }, [id, password, passwordCheck, email, pwBox, emailCheck]);
 
   return (
     <div>

@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { getMovie } from "../api/request";
 import MovieCard from "../components/MovieCard";
 import styled from "styled-components";
+import { Link } from "react-router-dom";
 
 export const Container = styled.div`
   display: flex;
@@ -28,7 +29,9 @@ const Popular = () => {
     <>
       <Container>
         {movieData.map((movie) => (
-          <MovieCard movie={movie} />
+          <Link to={`/detail/${movie.id}`}>
+            <MovieCard movie={movie} />
+          </Link>
         ))}
       </Container>
     </>
