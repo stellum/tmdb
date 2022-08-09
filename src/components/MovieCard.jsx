@@ -4,7 +4,7 @@ import movie from "../assets/movie.jpeg";
 import { CgMoreO } from "react-icons/cg";
 
 const MovieCard = ({ movie }) => {
-  console.log(movie);
+  // console.log(movie);
   return (
     <>
       {movie && (

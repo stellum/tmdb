@@ -36,13 +36,13 @@ const Header = () => {
                       <Link to="/popular">인기</Link>
                     </li>
                     <li>
-                      <Link to="/current-shows">현재 상영 중</Link>
+                      <Link to="/now-playing">현재 상영 중</Link>
                     </li>
                     <li>
-                      <Link to="/future-releases"> 개봉 예정</Link>
+                      <Link to="/upcoming"> 개봉 예정</Link>
                     </li>
                     <li>
-                      <Link to="/ratings"> 높은 평점</Link>
+                      <Link to="/top-rated"> 높은 평점</Link>
                     </li>
                   </SubMenuUl>
                 </MenuLi>
@@ -54,13 +54,13 @@ const Header = () => {
                     <Link to="/popular">인기</Link>
                   </li>
                   <li>
-                    <Link to="/current-shows">오늘 방영</Link>
+                    <Link to="/now-playing">오늘 방영</Link>
                   </li>
                   <li>
-                    <Link to="/future-releases">TV 방영 중</Link>
+                    <Link to="">TV 방영 중</Link>
                   </li>
                   <li>
-                    <Link to="/ratings"> 높은 평점</Link>
+                    <Link to="/top-rated"> 높은 평점</Link>
                   </li>
                 </SubMenuUl>
               </MenuLi>
@@ -68,7 +68,7 @@ const Header = () => {
                 <h4>인물</h4>
                 <SubMenuUl>
                   <li>
-                    <Link to="/popular">인기 인물</Link>
+                    <Link to="">인기 인물</Link>
                   </li>
                 </SubMenuUl>
               </MenuLi>
@@ -76,16 +76,16 @@ const Header = () => {
                 <h4>More</h4>
                 <SubMenuUl>
                   <li>
-                    <Link to="/popular">토론 내역</Link>
+                    <Link to="">토론 내역</Link>
                   </li>
                   <li>
-                    <Link to="/current-shows">기여 랭킹</Link>
+                    <Link to="">기여 랭킹</Link>
                   </li>
                   <li>
-                    <Link to="/future-releases">지원</Link>
+                    <Link to="">지원</Link>
                   </li>
                   <li>
-                    <Link to="/ratings">API</Link>
+                    <Link to="">API</Link>
                   </li>
                 </SubMenuUl>
               </MenuLi>
