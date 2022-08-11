@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import logo from "../assets/logo.svg";
 import {
@@ -12,21 +12,29 @@ import {
   SubMenuUl,
   SubNav,
   AddImg,
+  Hamburger,
 } from "../styles/Header";
 import { GrAdd } from "react-icons/gr";
 import { GoSearch } from "react-icons/go";
 import MovieCard from "./MovieCard";
 const Header = () => {
+  const [hamburgerOpen, setHamburgerOpen] = useState(false);
+
+  const toggleHamburger = () => {
+    setHamburgerOpen(!hamburgerOpen);
+    console.log(hamburgerOpen);
+  };
+
   return (
     <HeaderContainer>
       <InnerWrap>
         <LeftInner>
           {/* logo */}
           <Logo>
-            <img src={logo} alt="" />
+            <img src={logo} alt={logo} />
           </Logo>
           {/* main nav */}
-          <MainNav>
+          <MainNav hamburgerOpen={hamburgerOpen}>
             <MenuUl>
               <div>
                 <MenuLi>
@@ -96,7 +104,7 @@ const Header = () => {
         {/* sub nav */}
         <SubNav>
           <AddImg>
-            <img src={GrAdd} alt="" />
+            <GrAdd />
           </AddImg>
           <div>
             <button>KO</button>
@@ -109,6 +117,11 @@ const Header = () => {
             <GoSearch />
           </div>
         </SubNav>
+        <Hamburger onClick={toggleHamburger}>
+          <div></div>
+          <div></div>
+          <div></div>
+        </Hamburger>
       </InnerWrap>
     </HeaderContainer>
   );

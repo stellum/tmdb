@@ -4,7 +4,7 @@ import { movieDetails } from "../api/request";
 
 const Detail = () => {
   const params = useParams();
-  console.log(params.postId);
+  // console.log(params.postId);
   movieDetails(params.postId);
 
   return <></>;
