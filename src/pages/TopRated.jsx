@@ -9,6 +9,9 @@ export const Container = styled.div`
   margin: auto;
   justify-content: space-around;
   flex-wrap: wrap;
+  @media (max-width: 700px) {
+    width: 100%;
+  }
 `;
 
 const TopRated = () => {

@@ -31,9 +31,13 @@ const Header = () => {
       <InnerWrap>
         <LeftInner>
           {/* logo */}
+
           <Logo>
-            <img src={logo} alt={logo} />
+            <Link to="/">
+              <img src={logo} alt={logo} />
+            </Link>
           </Logo>
+
           {/* main nav */}
           <MainNav hamburgerOpen={hamburgerOpen}>
             <MenuUl>

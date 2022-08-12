@@ -74,7 +74,7 @@ export const MenuLi = styled.li`
 `;
 
 export const SubMenuUl = styled.ul`
-  /* display: block;
+  display: none;
   position: absolute;
   background-color: #fff;
   padding: 8px 55px 8px 15px;
@@ -83,6 +83,7 @@ export const SubMenuUl = styled.ul`
   width: 200px;
   margin: 0;
   padding: 0;
+  top: 60px;
 
   li {
     display: block;
@@ -98,7 +99,7 @@ export const SubMenuUl = styled.ul`
       padding-right: 20px;
       cursor: pointer;
     }
-  } */
+  }
 `;
 
 export const SubNav = styled.nav`

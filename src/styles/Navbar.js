@@ -4,7 +4,8 @@ import { Link } from "react-router-dom";
 export const NavbarContainer = styled.nav`
   width: 100%;
   height: ${(props) => (props.extendNavbar ? "100vh" : "80px")};
-  background-color: black;
+  background-color: rgba(3, 37, 65, 1);
+
   display: flex;
   flex-direction: column;
 
@@ -25,6 +26,11 @@ export const RightContainer = styled.div`
   display: flex;
   justify-content: flex-end;
   padding-right: 50px;
+  align-items: center;
+
+  a {
+    width: fit-content;
+  }
 `;
 
 export const NavbarInnerContainer = styled.div`
@@ -37,36 +43,45 @@ export const NavbarLinkContainer = styled.div`
   display: flex;
 `;
 
-export const NavbarLink = styled(Link)`
+export const NavbarLink = styled.div`
   color: white;
   font-size: x-large;
   text-decoration: none;
   margin: 10px;
+
+  /* padding: 20px 10px */
 
   @media (max-width: 700px) {
     /* display: none; */
   }
 `;
 
-export const NavbarLinkExtended = styled(Link)`
+export const NavbarLinkExtended = styled.div`
   color: white;
   font-size: x-large;
   text-decoration: none;
   margin: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  cursor: pointer;
+  &.active {
+    ul {
+      display: block;
+    }
+  }
+
+  h4 {
+    font-weight: 600;
+  }
 `;
 
 export const Logo = styled.img`
   margin: 10px;
-  max-width: 180px;
+  min-width: 180px;
   height: auto;
 `;
-
-// 이렇게 써도 될까?
-// export const Logo = styled(Link)`
-//   margin: 10px;
-//   max-width: 180px;
-//   height: auto;
-// `;
 
 export const OpenLinksButton = styled.button`
   width: 70px;
@@ -89,5 +104,37 @@ export const NavbarExtendedContainer = styled.div`
 
   @media (min-width: 700px) {
     display: none;
+  }
+`;
+
+export const MenuUlTag = styled.ul`
+  display: flex;
+
+  @media (max-width: 700px) {
+    display: none;
+  }
+`;
+export const MenuLiTag = styled.li`
+  &:hover {
+    ul {
+      display: block;
+    }
+  }
+`;
+
+export const Accordion = styled.ul`
+  padding: 10px;
+  /* background-color: #fff; */
+  width: 100%;
+  display: none;
+
+  li {
+    height: 40px;
+    text-align: center;
+    line-height: 40px;
+    a {
+      text-decoration: none;
+      color: #fff;
+    }
   }
 `;

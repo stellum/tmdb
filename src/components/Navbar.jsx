@@ -11,13 +11,15 @@ import {
   Logo,
   OpenLinksButton,
   NavbarLinkExtended,
+  MenuUlTag,
+  MenuLiTag,
+  Accordion,
 } from "../styles/Navbar";
 import logo from "../assets/logo.svg";
 import {
   HeaderContainer,
   InnerWrap,
   LeftInner,
-  // Logo,
   MainNav,
   MenuUl,
   MenuLi,
@@ -27,34 +29,107 @@ import {
   Hamburger,
 } from "../styles/Header";
 
+// const data = [
+//   {
+//     id: 1,
+//     title: "영화",
+//     list: "인기, 현재 상영 중, 개봉 예정, 높은 평점",
+//   },
+//   {
+//     id: 2,
+//     title: "TV 프로그램",
+//     list: "인기, 오늘 방영, TV 방영 중, 높은 평점",
+//   },
+//   {
+//     id: 3,
+//     title: "인물",
+//     list: "인기 인물",
+//   },
+//   {
+//     id: 4,
+//     title: "More",
+//     list: "토론 내역, 기여 랭킹, 지원, API",
+//   },
+// ];
+
 const Navbar = () => {
   const [extendNavbar, setExtendNavbar] = useState(false);
+  const [accordion, setAccordion] = useState(false);
+
+  const openAccordion = (e) => {
+    e.currentTarget.classList.toggle("active");
+  };
 
   return (
     <NavbarContainer extendNavbar={extendNavbar}>
       <NavbarInnerContainer>
         <LeftContainer>
           <NavbarLinkContainer>
-            <NavbarLink to="/movie">
-              영화
-              <SubMenuUl>
-                <li>
-                  <Link to="/popular">인기</Link>
-                </li>
-                <li>
-                  <Link to="/now-playing">현재 상영 중</Link>
-                </li>
-                <li>
-                  <Link to="/upcoming"> 개봉 예정</Link>
-                </li>
-                <li>
-                  <Link to="/top-rated"> 높은 평점</Link>
-                </li>
-              </SubMenuUl>
-            </NavbarLink>
-            <NavbarLink to="/tv"> TV 프로그램</NavbarLink>
-            <NavbarLink to="/people">인물</NavbarLink>
-            <NavbarLink to="/more">More</NavbarLink>
+            <MenuUlTag>
+              <MenuLiTag>
+                <NavbarLink>영화 </NavbarLink>
+                <SubMenuUl>
+                  <li>
+                    <Link to="/popular">인기</Link>
+                  </li>
+                  <li>
+                    <Link to="/now-playing">현재 상영 중</Link>
+                  </li>
+                  <li>
+                    <Link to="/upcoming"> 개봉 예정</Link>
+                  </li>
+                  <li>
+                    <Link to="/top-rated"> 높은 평점</Link>
+                  </li>
+                </SubMenuUl>
+              </MenuLiTag>
+
+              <li>
+                <NavbarLink>TV 프로그램 </NavbarLink>
+                <SubMenuUl>
+                  <li>
+                    <Link to="/popular">인기</Link>
+                  </li>
+                  <li>
+                    <Link to="/now-playing">오늘 방영</Link>
+                  </li>
+                  <li>
+                    <Link to="/upcoming"> TV 방영 중</Link>
+                  </li>
+                  <li>
+                    <Link to="/top-rated"> 높은 평점</Link>
+                  </li>
+                </SubMenuUl>
+              </li>
+
+              <li>
+                <NavbarLink>인물 </NavbarLink>
+                <SubMenuUl>
+                  <li>
+                    <Link to="/popular">인기 인물</Link>
+                  </li>
+                </SubMenuUl>
+              </li>
+
+              <li>
+                <NavbarLink>More </NavbarLink>
+                <SubMenuUl>
+                  <li>
+                    <Link to="">토론 내역</Link>
+                  </li>
+                  <li>
+                    <Link to="">기여 랭킹</Link>
+                  </li>
+                  <li>
+                    <Link to="">지원</Link>
+                  </li>
+                  <li>
+                    <Link to="">API</Link>
+                  </li>
+                </SubMenuUl>
+              </li>
+            </MenuUlTag>
+
             <OpenLinksButton
               onClick={() => {
                 setExtendNavbar((currentval) => !currentval);
@@ -65,17 +140,77 @@ const Navbar = () => {
           </NavbarLinkContainer>
         </LeftContainer>
         <RightContainer>
-          {/* <Link to="/"> */}
-          <Logo src={logo}></Logo>
-          {/* </Link> */}
+          <Link to="/">
+            <Logo src={logo} />
+          </Link>
         </RightContainer>
       </NavbarInnerContainer>
       {extendNavbar && (
         <NavbarExtendedContainer>
-          <NavbarLinkExtended to="/movie"> 영화</NavbarLinkExtended>
-          <NavbarLinkExtended to="/tv"> TV 프로그램</NavbarLinkExtended>
-          <NavbarLinkExtended to="/people">인물</NavbarLinkExtended>
-          <NavbarLinkExtended to="/more">More</NavbarLinkExtended>
+          <NavbarLinkExtended onClick={openAccordion}>
+            <h4>영화</h4>
+            <Accordion>
+              {/* {data.map((item) => {
+                return;
+                <Accordion key={item.id} {...item} />;
+              })} */}
+
+              <li>
+                <Link to="/popular">인기</Link>
+              </li>
+              <li>
+                <Link to="/now-playing">현재 상영 중</Link>
+              </li>
+              <li>
+                <Link to="/upcoming"> 개봉 예정</Link>
+              </li>
+              <li>
+                <Link to="/top-rated"> 높은 평점</Link>
+              </li>
+            </Accordion>
+          </NavbarLinkExtended>
+          <NavbarLinkExtended onClick={openAccordion}>
+            <h4>TV 프로그램</h4>
+            <Accordion>
+              <li>
+                <Link to="/popular">인기</Link>
+              </li>
+              <li>
+                <Link to="/now-playing">오늘 방영</Link>
+              </li>
+              <li>
+                <Link to="/upcoming"> TV 방영 중</Link>
+              </li>
+              <li>
+                <Link to="/top-rated"> 높은 평점</Link>
+              </li>
+            </Accordion>
+          </NavbarLinkExtended>
+          <NavbarLinkExtended onClick={openAccordion}>
+            <h4>인물</h4>
+            <Accordion>
+              <li>
+                <Link to="/popular">인기 인물</Link>
+              </li>
+            </Accordion>
+          </NavbarLinkExtended>
+          <NavbarLinkExtended onClick={openAccordion}>
+            <h4>More</h4>
+            <Accordion>
+              <li>
+                <Link to="">토론 내역</Link>
+              </li>
+              <li>
+                <Link to="">기여 랭킹</Link>
+              </li>
+              <li>
+                <Link to="">지원</Link>
+              </li>
+              <li>
+                <Link to="">API</Link>
+              </li>
+            </Accordion>
+          </NavbarLinkExtended>
         </NavbarExtendedContainer>
       )}
     </NavbarContainer>
