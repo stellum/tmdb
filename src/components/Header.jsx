@@ -17,12 +17,13 @@ import {
 import { GrAdd } from "react-icons/gr";
 import { GoSearch } from "react-icons/go";
 import MovieCard from "./MovieCard";
+
 const Header = () => {
   const [hamburgerOpen, setHamburgerOpen] = useState(false);
 
   const toggleHamburger = () => {
     setHamburgerOpen(!hamburgerOpen);
-    console.log(hamburgerOpen);
+    // console.log(hamburgerOpen);
   };
 
   return (
@@ -36,25 +37,25 @@ const Header = () => {
           {/* main nav */}
           <MainNav hamburgerOpen={hamburgerOpen}>
             <MenuUl>
-              <div>
-                <MenuLi>
-                  <h4>영화</h4>
-                  <SubMenuUl>
-                    <li>
-                      <Link to="/popular">인기</Link>
-                    </li>
-                    <li>
-                      <Link to="/now-playing">현재 상영 중</Link>
-                    </li>
-                    <li>
-                      <Link to="/upcoming"> 개봉 예정</Link>
-                    </li>
-                    <li>
-                      <Link to="/top-rated"> 높은 평점</Link>
-                    </li>
-                  </SubMenuUl>
-                </MenuLi>
-              </div>
+              {/* <div> */}
+              <MenuLi>
+                <h4>영화</h4>
+                <SubMenuUl>
+                  <li>
+                    <Link to="/popular">인기</Link>
+                  </li>
+                  <li>
+                    <Link to="/now-playing">현재 상영 중</Link>
+                  </li>
+                  <li>
+                    <Link to="/upcoming"> 개봉 예정</Link>
+                  </li>
+                  <li>
+                    <Link to="/top-rated"> 높은 평점</Link>
+                  </li>
+                </SubMenuUl>
+              </MenuLi>
+              {/* </div> */}
               <MenuLi>
                 <h4>TV 프로그램</h4>
                 <SubMenuUl>

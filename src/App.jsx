@@ -1,4 +1,5 @@
-import Header from "./components/Header";
+// import Header from "./components/Header";
+import Navbar from "./components/Navbar";
 import { BrowserRouter, Routes, Route, useParams } from "react-router-dom"; // BrowserRouter 으로 사용할 컴포넌트들을 감싸줘야함
 import Popular from "./pages/Popular";
 import NowPlaying from "./pages/NowPlaying";
@@ -15,7 +16,8 @@ function App() {
   return (
     <>
       <BrowserRouter>
-        <Header />
+        <Navbar />
+        {/* <Header /> */}
         {/* <MovieCard /> */}
         <Routes>
           <Route path="/" element={<Home />}></Route>
