@@ -1,5 +1,5 @@
 import React from "react";
-import Popular from "./Popular";
+import Popular from "./movies/Movie";
 import {
   HeroBannerContainer,
   HeroBannerInnerWrap,
@@ -51,7 +51,7 @@ const Home = () => {
             </div>
           </SelectorWrap>
         </PopularColumn>
-        <Popular />
+        {/* <Popular /> */}
       </PopularContainer>
       {/* FREE TO WATCH */}
       <div></div>

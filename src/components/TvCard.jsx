@@ -3,26 +3,26 @@ import { CardWrap, Movie, Options, TextWrap } from "../styles/MovieCard";
 import movie from "../assets/movie.jpeg";
 import { CgMoreO } from "react-icons/cg";
 
-const MovieCard = ({ movie }) => {
-  // console.log(movie);
+const TvCard = ({ tv }) => {
+  // console.log(tv);
   return (
     <>
-      {movie && (
+      {tv && (
         <CardWrap>
-          <Options>
+          <MovieImg>
             <div>
               <CgMoreO />
             </div>
-          </Options>
+          </MovieImg>
           <Movie
-            src={`https://image.tmdb.org/t/p/w300/${movie.poster_path}`}
-            alt={movie.title}
+            src={`https://image.tmdb.org/t/p/w300/${tv.poster_path}`}
+            alt={tv.name}
           >
             {/* <img src={movie} alt="" /> */}
           </Movie>
           <TextWrap>
-            <h1>{movie.title}</h1>
-            <p>{movie.release_date}</p>
+            <h1>{tv.name}</h1>
+            <p>{tv.first_air_date}</p>
           </TextWrap>
         </CardWrap>
       )}
@@ -30,4 +30,4 @@ const MovieCard = ({ movie }) => {
   );
 };
 
-export default MovieCard;
+export default TvCard;

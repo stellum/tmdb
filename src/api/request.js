@@ -2,6 +2,7 @@ import axios from "axios";
 
 const API_KEY = import.meta.env.VITE_API_KEY;
 
+// MOVIES
 export const getMovie = async (page) => {
   try {
     const response = await axios({
@@ -75,6 +76,7 @@ export const movieDetails = async (movieId) => {
   }
 };
 
+// TV
 export const tvDetails = async (tvId) => {
   // console.log("tvId", tvId);
   try {
@@ -84,6 +86,34 @@ export const tvDetails = async (tvId) => {
     });
     if (response.status === 200) {
       console.log(response);
+      return response.data;
+    }
+  } catch (e) {
+    console.log(e);
+  }
+};
+
+export const getTv = async (page) => {
+  try {
+    const response = await axios({
+      method: "GET",
+      url: `https://api.themoviedb.org/3/tv/popular?api_key=${API_KEY}&language=en-kr&page=${page}`,
+    });
+    if (response.status === 200) {
+      return response.data;
+    }
+  } catch (e) {
+    console.log(e);
+  }
+};
+
+export const currentTv = async (page) => {
+  try {
+    const response = await axios({
+      method: "GET",
+      url: `https://api.themoviedb.org/3/tv/airing_today?api_key=${API_KEY}&language=en-kr&page=${page}`,
+    });
+    if (response.status === 200) {
       return response.data;
     }
   } catch (e) {

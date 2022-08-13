@@ -3,19 +3,22 @@ import styled from "styled-components";
 export const CardWrap = styled.div`
   /* width: 215px; */
   position: relative;
-  margin-top: 100px;
+  margin-top: 50px;
   margin-bottom: 30px;
+  /* background-color: blue; */
 `;
-export const MovieImg = styled.div`
+export const Options = styled.div`
   right: 4px;
   top: 10px;
   position: absolute;
+
   div {
     cursor: pointer;
   }
 `;
 export const Movie = styled.img`
   border-radius: 8px;
+  width: 100%;
 `;
 
 export const TextWrap = styled.div`

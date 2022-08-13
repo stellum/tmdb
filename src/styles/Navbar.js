@@ -109,6 +109,7 @@ export const NavbarExtendedContainer = styled.div`
 
 export const MenuUlTag = styled.ul`
   display: flex;
+  cursor: pointer;
 
   @media (max-width: 700px) {
     display: none;

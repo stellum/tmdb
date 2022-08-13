@@ -4,7 +4,7 @@ import Stack from "@mui/material/Stack";
 import styled from "styled-components";
 
 const Container = styled.div`
-  margin: 50px 0;
+  margin: 100px auto;
 `;
 
 const PaginationComp = ({ totalPages, setPage }) => {

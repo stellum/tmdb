@@ -70,48 +70,48 @@ const Navbar = () => {
                 <NavbarLink>영화 </NavbarLink>
                 <SubMenuUl>
                   <li>
-                    <Link to="/popular">인기</Link>
+                    <Link to="/movie">인기</Link>
                   </li>
                   <li>
-                    <Link to="/now-playing">현재 상영 중</Link>
+                    <Link to="/movie/now-playing">현재 상영 중</Link>
                   </li>
                   <li>
-                    <Link to="/upcoming"> 개봉 예정</Link>
+                    <Link to="/movie/upcoming"> 개봉 예정</Link>
                   </li>
                   <li>
-                    <Link to="/top-rated"> 높은 평점</Link>
+                    <Link to="/movie/top-rated"> 높은 평점</Link>
                   </li>
                 </SubMenuUl>
               </MenuLiTag>
 
-              <li>
+              <MenuLiTag>
                 <NavbarLink>TV 프로그램 </NavbarLink>
                 <SubMenuUl>
                   <li>
-                    <Link to="/popular">인기</Link>
+                    <Link to="/tv">인기</Link>
                   </li>
                   <li>
-                    <Link to="/now-playing">오늘 방영</Link>
+                    <Link to="/tv/airing-today">오늘 방영</Link>
                   </li>
                   <li>
-                    <Link to="/upcoming"> TV 방영 중</Link>
+                    <Link to="/tv/on-the-air"> TV 방영 중</Link>
                   </li>
                   <li>
-                    <Link to="/top-rated"> 높은 평점</Link>
+                    <Link to="/tv/top-rated"> 높은 평점</Link>
                   </li>
                 </SubMenuUl>
-              </li>
+              </MenuLiTag>
 
-              <li>
+              <MenuLiTag>
                 <NavbarLink>인물 </NavbarLink>
                 <SubMenuUl>
                   <li>
-                    <Link to="/popular">인기 인물</Link>
+                    <Link to="/person">인기 인물</Link>
                   </li>
                 </SubMenuUl>
-              </li>
+              </MenuLiTag>
 
-              <li>
+              <MenuLiTag>
                 <NavbarLink>More </NavbarLink>
                 <SubMenuUl>
                   <li>
@@ -127,7 +127,7 @@ const Navbar = () => {
                     <Link to="">API</Link>
                   </li>
                 </SubMenuUl>
-              </li>
+              </MenuLiTag>
             </MenuUlTag>
 
             <OpenLinksButton
