@@ -35,7 +35,10 @@ const Home = () => {
           <h2>What's Popular</h2>
           <SelectorWrap>
             <div>
-              <h3>스트리밍</h3>
+              <h3>
+                {/* API 불러올때 Link 로 바꿔주기 */}
+                <a href="">스트리밍</a>
+              </h3>
             </div>
             <div>
               <h3>TV</h3>

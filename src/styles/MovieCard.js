@@ -23,8 +23,14 @@ export const TextWrap = styled.div`
   margin-top: 20px;
   text-align: left;
   line-height: 23px;
+  font-size: 1em;
   h1 {
     font-weight: 600;
+    text-decoration: none;
+    color: #000;
+    &:hover {
+      color: #01b4e4;
+    }
   }
   p {
     color: #a2a2a2;

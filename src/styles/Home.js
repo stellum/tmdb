@@ -88,6 +88,7 @@ export const Searchbar = styled.form`
     font-size: 1.1em;
     padding: 10px 20px;
     box-sizing: border-box;
+    outline: none;
   }
   button {
     width: 100px;
@@ -128,6 +129,11 @@ export const PopularContainer = styled.div`
 `;
 export const PopularColumn = styled.div`
   display: flex;
+  margin-top: 40px;
+  margin-left: 40px;
+  h2 {
+    font-weight: 500;
+  }
 `;
 
 export const SelectorWrap = styled.div`
@@ -139,9 +145,17 @@ export const SelectorWrap = styled.div`
   border: 1px solid rgba(3, 37, 65, 1);
   border-radius: 30px;
   background-color: rgba(3, 37, 65, 1);
-  color: #000;
+  /* color: #000; */
   h3 {
     padding: 4px 20px;
+    a {
+      background: linear-gradient(to right, #c0fecf 0%, #1ed5a9 100%);
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+      /* color: #000; */
+      font-weight: 600;
+      text-decoration: none;
+    }
   }
   div:nth-child(1) {
     position: relative;
